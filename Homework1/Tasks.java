@@ -1,10 +1,8 @@
-package Homework1;
-
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class Tasks1 {
+public class Tasks {
     public static void main(String[] args) {
         //Task1();
         //Task2();
@@ -128,4 +126,6 @@ public class Tasks1 {
 
             System.out.printf("Ответ: %s", res);  
         }
+    
+    
 }
