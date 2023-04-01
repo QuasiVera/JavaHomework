@@ -1,0 +1,4 @@
+апр. 01, 2023 12:59:03 PM Homework2.Task_3 loggerSettings
+INFO: Файл log1.txt создан 
+апр. 01, 2023 12:59:03 PM Homework2.Task_3 main
+INFO: Считывание прошло успешно

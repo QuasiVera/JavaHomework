@@ -16,9 +16,19 @@ public class Task_1 {
 
     public static void main(String[] args) {
         Logger logger = Logger.getLogger(Task_1.class.getName());
+        loggerSettings(logger);
+
+        String text = "[{\"фамилия\":\"Иванов\",\"оценка\":\"5\",\"предмет\":\"Математика\"}," +
+                "{\"фамилия\":\"Петрова\",\"оценка\":\"4\",\"предмет\":\"Информатика\"}, " +
+                "{\"фамилия\":\"Краснов\",\"оценка\":\"5\",\"предмет\":\"Физика\"}]";
+
+        parsing(text, logger);
+    }
+    
+    static void loggerSettings(Logger logger) {
         FileHandler fh;
         try {
-            fh = new FileHandler("log.txt");
+            fh = new FileHandler("homework2/log.txt");
             logger.addHandler(fh);
             SimpleFormatter sFormat = new SimpleFormatter();
             fh.setFormatter(sFormat);
@@ -31,9 +41,9 @@ public class Task_1 {
             logger.log(Level.WARNING, e.getMessage());
         }
 
-        String text = "[{\"фамилия\":\"Иванов\",\"оценка\":\"5\",\"предмет\":\"Математика\"}," +
-                "{\"фамилия\":\"Петрова\",\"оценка\":\"4\",\"предмет\":\"Информатика\"}, " +
-                "{\"фамилия\":\"Краснов\",\"оценка\":\"5\",\"предмет\":\"Физика\"}]";
+    }
+
+    static void parsing(String text, Logger logger) {
         text = text.replaceAll("[\\[\\]{\"]", "");
         // text = text.replace("{", " ").replace("["," ").replace("]","
         // ").replace("\""," "); *Сохранение для меня

@@ -3,19 +3,34 @@ package Homework2;
 import java.io.*;
 import java.util.logging.*;
 
-
 /*
  * 3. *Получить исходную json строку из файла, используя FileReader или Scanner
  */
 
 public class Task_3 {
     static Logger logger;
+
     public static void main(String[] args) throws Exception {
 
         Logger logger = Logger.getLogger(Task_3.class.getName());
+        loggerSettings(logger);
+
+        BufferedReader br = new BufferedReader(new FileReader("Homework2/Journal.json"));
+        String str;
+        StringBuilder res = new StringBuilder();
+        while ((str = br.readLine()) != null) {
+            res.append(str);
+        }
+        System.out.printf("Получено: \n %s", res.toString());
+        logger.info("Считывание прошло успешно");
+        br.close();
+
+    }
+
+    static void loggerSettings(Logger logger) {
         FileHandler fh;
         try {
-            fh = new FileHandler("log1.txt");
+            fh = new FileHandler("Homework2/log1.txt");
             logger.addHandler(fh);
             SimpleFormatter sFormat = new SimpleFormatter();
             fh.setFormatter(sFormat);
@@ -27,15 +42,6 @@ public class Task_3 {
             e.printStackTrace();
             logger.log(Level.WARNING, e.getMessage());
         }
-
-        BufferedReader br = new BufferedReader(new FileReader("Journal.json"));
-        String str;
-        while ((str = br.readLine()) != null) {
-            System.out.println(str);
-        }
-        logger.info("Считывание прошло успешно");
-        br.close();
-
     }
-    
+
 }

@@ -1,6 +1,6 @@
-апр. 01, 2023 12:18:57 AM Homework2.Task_1 main
+апр. 01, 2023 12:57:48 PM Homework2.Task_1 loggerSettings
 INFO: Тестовое логирование 
-апр. 01, 2023 12:18:57 AM Homework2.Task_1 main
+апр. 01, 2023 12:57:48 PM Homework2.Task_1 parsing
 INFO: Строка успешно разделена
-апр. 01, 2023 12:18:57 AM Homework2.Task_1 main
+апр. 01, 2023 12:57:48 PM Homework2.Task_1 parsing
 INFO: Данные из строки успешно получены

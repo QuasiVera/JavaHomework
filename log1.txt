@@ -1,2 +1,0 @@
-мар. 31, 2023 11:37:21 PM Homework2.Task_3 main
-INFO: Файл log1.txt создан 
