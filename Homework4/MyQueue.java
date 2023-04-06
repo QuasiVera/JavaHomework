@@ -27,8 +27,8 @@ public class MyQueue {
         return arr[0];
     }
 
-    public int dequeue() { // что-то надо придумать
-        int res = first();
+    public int dequeue() {                                     
+        int res = first();                                     
         int[] arr1 = new int[arr.length];
         System.arraycopy(arr, 1, arr1, 0, arr.length-1);
         arr = arr1;
@@ -36,7 +36,7 @@ public class MyQueue {
         return res;
     }
 
-    public String toStr() {
+    public String toStr() {                         // Эксперимент, чтобы можно было вывести System.out.println
         String res = "";
         for (int i = 0; i < size; i++) {
             if (arr[i] == 0)
