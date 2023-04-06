@@ -1,4 +1,7 @@
 package Homework4;
+/*
+ * 1. Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернёет «перевёрнутый» список.
+ */
 
 import java.util.LinkedList;
 import java.util.ListIterator;

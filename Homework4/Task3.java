@@ -1,5 +1,9 @@
 package Homework4;
 
+/*
+ * 3. Найдите сумму всех элементов LinkedList, сохраняя все элементы в списке. Используйте итератор
+ */
+
 import java.util.LinkedList;
 import java.util.Random;
 
