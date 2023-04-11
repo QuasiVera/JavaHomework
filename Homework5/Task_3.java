@@ -74,7 +74,7 @@ public class Task_3 {
             array[i] = array[max];
             array[max] = temp;
 
-            heapify(array, len, max);
+            array = heapify(array, len, max);
         }
         return array;
     }
