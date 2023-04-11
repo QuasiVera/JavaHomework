@@ -8,16 +8,19 @@ import java.util.*;
 public class Task1 {
     public static void main(String[] args) {
         phoneBookMain();
-        
+
     }
     
+    
+    //----------------------- Меню
+
     static void phoneBookMain() {
         Map<String, List<String>> phoneBook = new HashMap<>();
         Scanner in = new Scanner(System.in, "CP866");
         boolean flag = true;
         while (flag) {
             System.out.println("\n Выберите действие: \n 1 - Добавить запись в справочник" +
-            " \n 2 - Поиск по фамилии \n 3 - Вывести весь справочник \n 4 - Выход \n");
+                    " \n 2 - Поиск по фамилии \n 3 - Вывести весь справочник \n 4 - Выход \n");
             String choice = in.next();
             switch (choice) {
                 case "1":
@@ -42,6 +45,8 @@ public class Task1 {
         }
     }
     
+    //----------------------- Запись в книгу
+
     static void recording(Map<String, List<String>> phoneBook) {
         Scanner in = new Scanner(System.in, "CP866");
         System.out.println("Введите ФИО через пробел");
@@ -58,6 +63,8 @@ public class Task1 {
             phoneBook.put(data, list);
         }
     }
+
+    //----------------------- Поиск по книге
 
     static void search(Map<String, List<String>> phoneBook) {
         Scanner in = new Scanner(System.in, "CP866");

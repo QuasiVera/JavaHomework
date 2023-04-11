@@ -17,6 +17,7 @@ public class Task_2 {
         List<String> inputList = new ArrayList<String>(Arrays.asList(userInput.split("\\s*(,|\n)\\s*")));
         HashMap<String, Integer> names = new HashMap<>();
         TreeMap<Integer, List<String>> sortedNames1 = new TreeMap<>(Comparator.reverseOrder());
+
         for (String person : inputList) {
             String temp = person.split(" ")[0];
             if (names.containsKey(temp)) {
@@ -37,7 +38,7 @@ public class Task_2 {
             }
         }
 
-        // System.out.println(names);
+        System.out.println(names);
         // List<Map.Entry<String, Integer>> sortedNames = new ArrayList<>(names.entrySet());
         // sortedNames.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));              * Оставила для себя
         System.out.println(sortedNames1);
