@@ -13,10 +13,7 @@ public class Task {
 
         setNotebooks(set);
         setParameters(parametersMap);
-        // System.out.println("В наличии" + set);
         sortedNotebooks(parametersMap, set);
-
-        // вытащить ноутбуки, сооттветствующие введенным критериям
 
     }
 
@@ -98,7 +95,7 @@ public class Task {
 
     }
 
-    // ----------- выбор ноутбуков, соответствующих выбранным критериям
+    // ----------- выбор ноутбуков, соответствующих заданным критериям
 
     static void sortedNotebooks(Map<String, String> parametersMap, Set<Notebook> set) {
         int i = 1;
