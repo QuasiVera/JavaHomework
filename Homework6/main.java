@@ -13,18 +13,15 @@ public class main {
 
         setNotebooks(set);
         setParameters(parametersMap);
-        //System.out.println("В наличии" + set);
+        // System.out.println("В наличии" + set);
         sortedNotebooks(parametersMap, set);
-		
-		
-		//  вытащить ноутбуки, сооттветствующие введенным критериям
-		
-	}
-	
 
-    
-// ------------ создание ассортимента ноутбуков
-    
+        // вытащить ноутбуки, сооттветствующие введенным критериям
+
+    }
+
+    // ------------ создание ассортимента ноутбуков
+
     static void setNotebooks(Set<Notebook> set) {
         Notebook model1 = new Notebook(8, 256, "Windows 11", "black");
         Notebook model2 = new Notebook(4, 128, "Windows 10", "black");
@@ -33,6 +30,7 @@ public class main {
         Notebook model5 = new Notebook(16, 256, "Windows 11", "black");
         Notebook model6 = new Notebook(8, 256, "Mac OS", "black");
         Notebook model7 = new Notebook(8, 512, "Mac OS", "gray");
+        Notebook model8 = new Notebook(16, 512, "Mac OS", "gray");
 
         set.add(model1);
         set.add(model2);
@@ -41,9 +39,9 @@ public class main {
         set.add(model5);
         set.add(model6);
         set.add(model7);
+        set.add(model8);
     }
 
-    
     static void setParameters(Map<String, String> parametersMap) {
         Scanner in = new Scanner(System.in);
         boolean flag = true;
@@ -78,8 +76,8 @@ public class main {
             }
         }
     }
-    
-    // 	----------- создание списка критериев с нужными значениями
+
+    // ----------- создание списка критериев с нужными значениями
 
     static void recording(Map<String, String> parametersMap, String parameter) {
         System.out.println("\n Введите необходимое/минимальное значение параметра " + parameter + "\n");
@@ -95,8 +93,8 @@ public class main {
         System.out.println(parametersMap);
 
     }
-    
-    // ----------- 
+
+    // -----------
 
     static void sortedNotebooks(Map<String, String> parametersMap, Set<Notebook> set) {
         int i = 1;
@@ -104,16 +102,22 @@ public class main {
             boolean validate = true;
             for (Map.Entry<String, String> entry : parametersMap.entrySet()) {
                 if (entry.getKey().equals("ram")) {
-                    if (!(notebook.getRam() == Integer.parseInt(entry.getValue()))) {
+                    if (!(notebook.getRam() >= Integer.parseInt(entry.getValue()))) {
                         validate = false;
                     }
                 }
-                if (validate) {
-                    System.out.println("Вариант " + i + " " + notebook);
-                    i++;
+                if (entry.getKey().equals("os")) {
+                    if (!(notebook.getOs().equalsIgnoreCase(entry.getValue()))) {
+                        validate = false;
+                    }
+
                 }
+            }
+            if (validate) {
+                System.out.println("Вариант " + i + " " + notebook);
+                i++;
             }
         }
     }
-}
 
+}
