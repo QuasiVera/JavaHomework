@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-public class main {
+public class Task {
     public static void main(String[] args) {
         Map<String, String> parametersMap = new HashMap<>();
         Set<Notebook> set = new HashSet<>();
@@ -54,19 +54,23 @@ public class main {
                 case "1":
                     parameter = "ram";
                     recording(parametersMap, parameter);
-                    System.out.println("Добавлен минимальный объем ОЗУ \n");
+                    System.out.println("Добавлен минимальный объем ОЗУ ");
                     break;
                 case "2":
                     parameter = "hdd";
                     recording(parametersMap, parameter);
-                    System.out.println("\n Добавлен минимальный объем ЖД\n");
+                    System.out.println("\n Добавлен минимальный объем ЖД");
                     break;
                 case "3":
                     parameter = "os";
                     recording(parametersMap, parameter);
-                    System.out.println("Добавлен тип ОС \n");
-
+                    System.out.println("Добавлен тип ОС ");
                     break;
+                case "4":
+                    parameter = "color";
+                    recording(parametersMap, parameter);
+                    System.out.println("Добавлен цвет ");
+                    break;    
                 case "0":
                     flag = false;
                     System.out.println("Подходящие варианты:");
@@ -94,7 +98,7 @@ public class main {
 
     }
 
-    // -----------
+    // ----------- выбор ноутбуков, соответствующих выбранным критериям
 
     static void sortedNotebooks(Map<String, String> parametersMap, Set<Notebook> set) {
         int i = 1;
@@ -106,11 +110,21 @@ public class main {
                         validate = false;
                     }
                 }
-                if (entry.getKey().equals("os")) {
-                    if (!(notebook.getOs().equalsIgnoreCase(entry.getValue()))) {
+                if (entry.getKey().equals("hdd")) {
+                    if (!(notebook.getHdd() >= Integer.parseInt(entry.getValue()))) {
                         validate = false;
                     }
-
+                }
+                if (entry.getKey().equals("os")) {
+                    if (!(notebook.getOs().toLowerCase().contains(entry.getValue().toLowerCase()))) {
+                        validate = false;
+                    }
+                }
+                if (entry.getKey().equals("color")) {
+                    if (!notebook.getColor().toLowerCase().contains(entry.getValue().toLowerCase())) {
+                        validate = false;
+                        
+                    }
                 }
             }
             if (validate) {
