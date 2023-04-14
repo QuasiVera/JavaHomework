@@ -51,6 +51,8 @@ public class Task {
         set.add(model8);
     }
 
+    // ------------ интерфейс для задания критериев отбора
+
     static void setParameters(Map<String, String> parametersMap) {
         Scanner in = new Scanner(System.in);
         boolean flag = true;
